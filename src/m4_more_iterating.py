@@ -653,12 +653,30 @@ def run_test_sum_first_n():
     print('Test 7 expected:', expected)
     print('       actual:  ', actual)
 
-    # TO DO 8 (continued):  Add your 2 ADDITIONAL tests here:
+    # DONE 8 (continued):  Add your 2 ADDITIONAL tests here:
+
+    # Test 8:
+    expected = 58
+    actual = sum_first_n([28, -19, 42, 7], 4)
+    print()
+    print('Test 8 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 9:
+    expected = 54
+    actual = sum_first_n([-11, -10, 75, -12], 3)
+    print()
+    print('Test 9 expected:', expected)
+    print('       actual:  ', actual)
 
 
 def sum_first_n(numbers, n):
-    for k in range
-    """
+    total = 0
+    for k in range(n):
+        total += numbers[k]
+    return total
+
+"""
     What comes in:
       -- An sequence of numbers.
       -- A nonnegative integer   n   that is less than or equal to
@@ -677,9 +695,9 @@ def sum_first_n(numbers, n):
     Type hints:
       :type numbers:   list of tuple (of numbers)
       :type n: int
-    """
+"""
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # DONE: 9. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # RESTRICTION:
