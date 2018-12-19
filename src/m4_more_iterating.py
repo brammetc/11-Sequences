@@ -10,8 +10,8 @@ in testing and BOUNDARY (EDGE) TESTING.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Tanner Brammeier.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import random
 import builtins  # Never necessary, but here to make a point about SUM
@@ -34,8 +34,8 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_sum_sequence()
-    # run_test_count_items_bigger_than()
+    # run_test_sum_sequence()
+    run_test_count_items_bigger_than()
     # run_test_count_positive_sines()
     # run_test_sum_first_n()
 
@@ -48,7 +48,7 @@ def run_test_sum_sequence():
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
-    # TODO: 2. READ the COMMENTS and CODE in this function,
+    # DONE: 2. READ the COMMENTS and CODE in this function,
     #  asking questions as needed.
     #
     #   When you believe that you understand:
@@ -210,7 +210,11 @@ def run_test_sum_sequence():
 
 
 def sum_sequence(sequence):
-    """
+    total = 0
+    for k in range(len(sequence)):
+        total += sequence[k]
+    return total
+"""
     What comes in:  A sequence of integers.
     What goes out: Returns the sum of the numbers in the given sequence.
     Side effects: None.
@@ -220,9 +224,9 @@ def sum_sequence(sequence):
       sum_sequence([])              returns  0
     Type hints:
       :type sequence: list or tuple (of integers)
-    """
+"""
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # RESTRICTION:
@@ -362,9 +366,40 @@ def run_test_count_items_bigger_than():
 
     # TODO 4 (continued):  Add your 2 ADDITIONAL tests here:
 
+    # Test 9
+    sequence = []
+    for _ in range(30):
+        sequence.append(random.randrange(-100, 100))
+
+    threshold = -100.00000001
+    expected = 30
+    actual = count_items_bigger_than(sequence, threshold)
+    print()
+    print('Test 9 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 10
+    sequence = []
+    for _ in range(100):
+        sequence.append(random.randrange(-100, 100))
+
+    threshold = -100.00000001
+    expected = 100
+    actual = count_items_bigger_than(sequence, threshold)
+    print()
+    print('Test 10 expected:', expected)
+    print('       actual:  ', actual)
+
 
 def count_items_bigger_than(numbers, threshold):
-    """
+    count = 0
+    for k in range(len(numbers)):
+        if numbers[k] > threshold:
+            count += 1
+        else:
+            count += 0
+    return count
+"""
     What comes in:
       -- An sequence of numbers.
       -- A number that is a 'threshold'.
@@ -395,9 +430,9 @@ def count_items_bigger_than(numbers, threshold):
     Type hints:
       :type numbers:   list or tuple (of numbers)
       :type threshold: float
-    """
+"""
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
 
